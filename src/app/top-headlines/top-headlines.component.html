@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-lg-8 m-auto">
+      <div>
+        <form class="example-form">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Search" name="query" [(ngModel)]="query">
+          </mat-form-field>
+        </form>
+        <div class="clearfix"></div>
+      </div>
+      <mat-tab-group mat-stretch-tabs class="example-stretched-tabs mat-elevation-z4"
+        (selectedIndexChange)="getNews($event)">
+        <mat-tab label="Latest"></mat-tab>
+        <mat-tab label="India"></mat-tab>
+        <mat-tab label="Business"></mat-tab>
+        <mat-tab label="Technology"></mat-tab>
+        <mat-tab label="Entertainment"></mat-tab>
+      </mat-tab-group>
+      <mat-card class="example-card mt-2" *ngFor="let data of articleData | search: query">
+        <mat-card-content>
+          <div mat-card-avatar class="example-header-image">
+            <img [src]="data.urlToImage" alt="">
+          </div>
+          <mat-card-header>
+            <mat-card-title>{{data.title}}</mat-card-title>
+            <mat-card-subtitle>{{data.source.name}} - {{data.publishedAt | date: 'MMM d, y'}}</mat-card-subtitle>
+          </mat-card-header>
+          <ul class="pl-3">
+            <li>
+              <h6> {{data.description}} </h6>
+              <mat-card-subtitle>{{data.author}}</mat-card-subtitle>
+            </li>
+          </ul>
+          <div class="clearfix"></div>
+        </mat-card-content>
+        <mat-card-actions>
+          <a [href]="data.url" target="_blank">View full coverage</a>
+        </mat-card-actions>
+      </mat-card>
+      <mat-card class="example-card mt-2" *ngIf="articleData.length == 0">
+          <mat-card-content>
+            
+            <p class="text-center">
+              Loading...
+            </p>
+            
+          </mat-card-content>
+        </mat-card>
+    </div>
+  </div>
+</div>

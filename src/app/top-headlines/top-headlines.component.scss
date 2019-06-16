@@ -1,0 +1,93 @@
+mat-tab-group {
+    background: #f8f9fa;
+
+    mat-card {
+        margin: 15px;
+    }
+}
+
+.mat-card-header .mat-card-title {
+    font-size: 18px;
+    font-weight: 600;
+}
+.mat-card-header .mat-card-subtitle {
+    font-size: 12px;
+}
+mat-card-content {
+    h6 {
+        font-size: 15px;
+        color: #464b4e;
+        font-weight: 400;
+    }
+    .mat-card-subtitle {
+        font-size: 12px;
+    }
+}
+
+.mat-card-avatar {
+    height: 150px;
+    width: 150px;
+    margin-left: 5px;
+    flex-shrink: 0;
+    object-fit: cover;
+    order: 2;
+    float: right;
+
+    img {
+        width: 100%;
+        max-height: 150px;
+        border-radius: 5px;
+    }
+}
+
+mat-card-actions {
+    margin-left: -16px;
+    padding: 5px 16px;
+    background: rgba(248, 249, 250, 0.72);
+    margin: 0px -16px -15px -16px !important;
+    a {
+        font-size: 14px;
+    }
+}
+.mat-card>.mat-card-actions:last-child {
+    padding-bottom: 4px;
+}
+
+.example-form {
+    min-width: 290px;
+    max-width: 290px;
+    float: right;
+
+    .example-full-width {
+        width: 100%;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .mat-card-avatar {
+        width: 80px;
+        height: 80px;
+        img {
+            max-height: 100px;
+        }
+    }
+    .mat-card-header .mat-card-title {
+        font-size: 12px;
+    }
+    .mat-card-header .mat-card-subtitle {
+        font-size: 10px;
+    }
+    mat-card-content {
+        h6 {
+            font-size: 11px;
+        }
+        .mat-card-subtitle {
+            font-size: 10px;
+        }
+    }
+    mat-card-actions {
+        a {
+            font-size: 11px;
+        }
+    }
+}
