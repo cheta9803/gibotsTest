@@ -35,7 +35,9 @@
           <div class="clearfix"></div>
         </mat-card-content>
         <mat-card-actions>
-          <a [href]="data.url" target="_blank">View full coverage</a>
+          <a [href]="data.url" target="_blank">
+            <i class="material-icons">web</i> View full coverage
+          </a>
         </mat-card-actions>
       </mat-card>
       <mat-card class="example-card mt-2" *ngIf="articleData.length == 0">
